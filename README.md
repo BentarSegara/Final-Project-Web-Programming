@@ -1,6 +1,6 @@
 # 🛠️ Projek Akhir - Sistem Manajemen Kost
 
-Repositori ini digunakan untuk mengerjakan **Proyek Akhir Semester** mata kuliah Pemrograman Web secara kolaboratif oleh kelompok 5 kelas pemrograman web H081.
+Repositori ini digunakan untuk mengerjakan dan mengelola **Proyek Akhir Semester** mata kuliah Pemrograman Web secara kolaboratif oleh kelompok 5 kelas pemrograman web H081.
 
 ---
 
