@@ -5,8 +5,8 @@ Repositori ini digunakan untuk mengerjakan **Proyek Akhir Semester** mata kuliah
 ---
 
 ## 📚 Daftar Isi
-- Deskripsi Proyek(#deskripsi-proyek)
-- Fitur(#fitur)
+- [Deskripsi Proyek](#deskripsi-proyek)
+- [Fitur](#fitur)
 - [Struktur Folder](#struktur-folder)
 - [Cara Menjalankan](#cara-menjalankan)
 - [Anggota Tim](#anggota-tim)
