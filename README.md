@@ -50,13 +50,12 @@ empty
 ---
 
 #👥 Anggota Tim
-Nama Lengkap                    NIM                  GitHub
-______________________________________________________________________
-Mika Mauritz Parapat        23081010199           @MikaParapat
-Isyanda Pratama             23081010207           @Isyanda
-Bryan Benedict Bangun       23081010214           @benect
-Fauzan Indarwan Zacky       23081010222           @FauzanIndarwan
-Bentar Segara Buana         23081010227           @BentarSegara
+
+- Mika Mauritz Parapat        23081010199           @MikaParapat
+- Isyanda Pratama             23081010207           @Isyanda
+- Bryan Benedict Bangun       23081010214           @benect
+- Fauzan Indarwan Zacky       23081010222           @FauzanIndarwan
+- Bentar Segara Buana         23081010227           @BentarSegara
 
 ----
 
