@@ -42,14 +42,14 @@ projek-akhir/
 
 ---
 
-##▶️ Cara Menjalankan
+## ▶️ Cara Menjalankan
 ````
 empty
 ````
 
 ---
 
-#👥 Anggota Tim
+## 👥 Anggota Tim
 
 - Mika Mauritz Parapat  | 23081010199 | @MikaParapat
 - Isyanda Pratama       | 23081010207 | @Isyanda
