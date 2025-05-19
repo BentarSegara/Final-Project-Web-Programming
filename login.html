@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="d-flex flex-column align-items-center mx-auto pt-5 rounded-1 shadow-lg" style="margin-top: 120px; width: 475px; height: 675px;">
-
-        <div class="text-center w-100 my-5"><span class="h1" >Nge-Kost</span></div>
+        <div class="text-center w-100 my-5"><span class="h1">Nge-Kost</span></div>
             <form action="" class="d-flex flex-column align-items-center  w-100 py-3 mb-5">
-                <div class="email w-75 mb-3 shadow">
-                    <input type="email" class="form-control rounded-2" id="emailForm" placeholder="Masukkan email atau username" style="height: 50px; border: 0px;">
+                 <div class="email input-group w-75 mb-3 shadow">
+                    <span class="input-group-text" id="useremail">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="email" class="form-control rounded-2" name="email" placeholder="Masukkan email atau username" style="height: 50px; border: 0px;" aria-describedby="useremail" autocomplete="off">
                 </div>
-                
-                <div class="password w-75 mb-3 shadow">
-                    <input type="password" class="form-control rounded-2" id="passForm" placeholder="Masukkan password" style="height: 50px; border: 0px;">
-                </div>
+
+                <div class="password input-group w-75 mb-3 shadow">
+                    <span class="input-group-text" id="passuser"><i class="fa-solid fa-key"></i></span>
+                    <input type="password" class="form-control rounded-2" name="password" placeholder="Masukkan password" style="height: 50px; border: 0px;" aria-describedby="passuser" autocomplete="off">
+                </div> 
     
                 <div class="forgotremember d-flex w-75 px-3 justify-content-between">
                     <div class="rememberme">
