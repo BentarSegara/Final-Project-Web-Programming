@@ -31,10 +31,10 @@ Repositori ini digunakan untuk mengerjakan dan mengelola **Proyek Akhir Semester
 ## 🗂️ Struktur Folder
 
 ```
-projek-akhir/
+Sistem-manajemen-kost/
 │
-├── src/               # Folder source code
-├── docs/              # Dokumentasi proyek
+├── node_modules/      # Folder Bootstrap
+├── src /              # Folder Source Code
 ├── assets/            # Gambar/logo/icon (jika ada)
 ├── README.md          # Dokumentasi ini
 └── ...
