@@ -1,35 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Daftar Akun - Sistem Kos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px 0; /* Added padding for scroll */
+        }
+        .auth-form {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .input-group-text {
+            background-color: #f8f9fa;
+            border-right: none;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .form-check-input:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+        .form-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .form-links a:hover {
+            text-decoration: underline;
+        }
+        /* Styles for error messages if you were to add them statically or via JS */
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        .invalid-feedback {
+            display: none; /* Hide by default, show with JS if needed for static validation */
+            width: 100%;
+            margin-top: .25rem;
+            font-size: .875em;
+            color: #dc3545;
+        }
+    </style>
 </head>
 <body>
-    <div class="d-flex flex-column align-items-center mx-auto pt-5 rounded-1 shadow-lg" style="margin-top: 120px; width: 475px; height: 675px;">
-        <div class="text-center w-100 mt-5" style="margin-bottom: 70px;"><span class="h1" >Sign Up Nge-Kost</span></div>
-            <form action="php/signup.php" method="post" class="d-flex flex-column align-items-center  w-100 py-3 mb-5">
-                <div class="username input-group w-75 mb-3 shadow">
-                    <span class="input-group-text" id="user"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" class="form-control rounded-2" name="username" placeholder="Masukkan username" style="height: 50px; border: 0px;" aria-describedby="user" autocomplete="off">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card auth-form shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-4">Daftar</h2>
+                        <form action="#" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nama Lengkap</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" name="name" class="form-control" value="" id="name" placeholder="Masukkan nama lengkap">
+                                </div>
+                                </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" name="email" class="form-control" value="" id="email" placeholder="Masukkan alamat email">
+                                </div>
+                                </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Nomor Telepon</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="text" name="phone" class="form-control" value="" id="phone" placeholder="Masukkan nomor telepon">
+                                </div>
+                                </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Kata Sandi</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" name="password" class="form-control" value="" id="password" placeholder="Minimal 6 karakter">
+                                </div>
+                                </div>
+                            <div class="mb-3">
+                                <label for="confirm_password" class="form-label">Konfirmasi Kata Sandi</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" name="confirm_password" class="form-control" value="" id="confirm_password" placeholder="Ulangi kata sandi">
+                                </div>
+                                </div>
+                            <div class="mb-3">
+                                <label class="form-label">Daftar Sebagai</label>
+                                <div class="d-flex">
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input" type="radio" name="role" id="role_tenant" value="tenant" checked>
+                                        <label class="form-check-label" for="role_tenant">
+                                            Penyewa
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="role" id="role_admin" value="admin">
+                                        <label class="form-check-label" for="role_admin">
+                                            Pemilik/Admin
+                                        </label>
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Daftar</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3 form-links">
+                            <p>Sudah punya akun? <a href="login.html">Masuk disini</a></p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="email input-group w-75 mb-3 shadow">
-                    <span class="input-group-text" id="useremail"><i class="fa-solid fa-envelope"></i></span>
-                    <input type="email" class="form-control rounded-2" name="email" placeholder="Masukkan email" style="height: 50px; border: 0px;" aria-describedby="useremail" autocomplete="off">
-                </div>
-
-                <div class="password input-group w-75 mb-3 shadow">
-                    <span class="input-group-text" id="passuser"><i class="fa-solid fa-key"></i></span>
-                    <input type="password" class="form-control rounded-2" name="password" placeholder="Masukkan password" style="height: 50px; border: 0px;" aria-describedby="passuser" autocomplete="off">
-                </div>    
-                <div class="signupbuttons d-flex w-75 mt-3" style="height: 45px;">
-                    <input type="submit" class="btn btn-primary w-100 px-3" value="Daftar">    
-                </div>
-            </form>            
+            </div>
         </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
