@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pembayaran - Sistem Kos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .main-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .navbar-nav .nav-link {
+            border-radius: 25px;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+            color: white;
+        }
+        
+        .history-item {
+            border-left: 4px solid #28a745; /* Default for paid */
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .history-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .history-item.unpaid {
+            border-left-color: #dc3545;
+        }
+        
+        .badge {
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: #667eea;
+            border-color: #667eea;
+            border-radius: 25px;
+        }
+        
+        .btn-outline-primary:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .btn-secondary {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        
+        .filter-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        .summary-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            color: white;
+            text-align: center;
+        }
+        
+        .summary-card h4 {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .summary-card p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-home"></i> Kosan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="beranda.html">
+                            <i class="fas fa-user me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tagihan.html">
+                            <i class="fas fa-file-invoice me-1"></i>Tagihan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pembayaran.html">
+                            <i class="fas fa-credit-card me-1"></i>Pembayaran
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="riwayat.html">
+                            <i class="fas fa-history me-1"></i>Riwayat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="laporan.html">
+                            <i class="fas fa-history me-1"></i>Laporan
+                        </a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <span class="navbar-text me-3">
+                        <i class="fas fa-user-circle me-1"></i>
+                        <span id="currentUser">Bryan</span>
+                    </span>
+                    <a class="nav-link" href="#" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <!-- Summary Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="summary-card">
+                    <h4 id="totalPayments">0</h4>
+                    <p>Total Pembayaran</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="summary-card">
+                    <h4 id="paidCount">0</h4>
+                    <p>Tagihan Lunas</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="summary-card">
+                    <h4 id="unpaidCount">0</h4>
+                    <p>Tagihan Belum Lunas</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="summary-card">
+                    <h4 id="totalAmount">Rp 0</h4>
+                    <p>Total Dibayar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="row align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label text-white">Status</label>
+                    <select class="form-select" id="statusFilter">
+                        <option value="all">Semua Status</option>
+                        <option value="paid">Lunas</option>
+                        <option value="unpaid">Belum Lunas</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label text-white">Tahun</label>
+                    <select class="form-select" id="yearFilter">
+                        <option value="all">Semua Tahun</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label text-white">Bulan</label>
+                    <select class="form-select" id="monthFilter">
+                        <option value="all">Semua Bulan</option>
+                        <option value="01">Januari</option>
+                        <option value="02">Februari</option>
+                        <option value="03">Maret</option>
+                        <option value="04">April</option>
+                        <option value="05">Mei</option>
+                        <option value="06">Juni</option>
+                        <option value="07">Juli</option>
+                        <option value="08">Agustus</option>
+                        <option value="09">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary" onclick="resetFilters()">
+                        <i class="fas fa-refresh me-1"></i>Reset Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Content -->
+        <div class="profile-card">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center me-3" 
+                         style="width: 60px; height: 60px;">
+                        <i class="fas fa-history fa-lg text-white"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h3 class="mb-1">Riwayat Tagihan</h3>
+                        <p class="text-muted mb-0">Riwayat lengkap pembayaran kos</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" onclick="exportHistory()">
+                            <i class="fas fa-download me-1"></i>Export
+                        </button>
+                    </div>
+                </div>
+
+                <div id="paymentHistoryList">
+                    <!-- History items will be loaded here -->
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="History pagination" id="paginationNav" style="display: none;">
+                    <ul class="pagination justify-content-center" id="paginationList">
+                        <!-- Pagination items will be generated here -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let allBillsData = [
+            {
+                id: 1,
+                month: 'Mei 2025',
+                amount: 1200000,
+                dueDate: '2025-05-31',
+                status: 'unpaid',
+                paidDate: null
+            },
+            {
+                id: 2,
+                month: 'April 2025',
+                amount: 1200000,
+                dueDate: '2025-04-30',
+                status: 'paid',
+                paidDate: '2025-04-28'
+            },
+            {
+                id: 3,
+                month: 'Maret 2025',
+                amount: 1200000,
+                dueDate: '2025-03-31',
+                status: 'paid',
+                paidDate: '2025-03-25'
+            },
+            {
+                id: 4,
+                month: 'Februari 2025',
+                amount: 1200000,
+                dueDate: '2025-02-28',
+                status: 'paid',
+                paidDate: '2025-02-26'
+            },
+            {
+                id: 5,
+                month: 'Januari 2025',
+                amount: 1200000,
+                dueDate: '2025-01-31',
+                status: 'paid',
+                paidDate: '2025-01-29'
+            },
+            {
+                id: 6,
+                month: 'Desember 2024',
+                amount: 1200000,
+                dueDate: '2024-12-31',
+                status: 'paid',
+                paidDate: '2024-12-28'
+            },
+            {
+                id: 7,
+                month: 'November 2024',
+                amount: 1200000,
+                dueDate: '2024-11-30',
+                status: 'paid',
+                paidDate: '2024-11-25'
+            },
+            {
+                id: 8,
+                month: 'Oktober 2024',
+                amount: 1200000,
+                dueDate: '2024-10-31',
+                status: 'paid',
+                paidDate: '2024-10-28'
+            }
+        ];
+
+        let filteredData = [];
+        let currentPage = 1;
+        const itemsPerPage = 5;
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(amount);
+        }
+
+        function formatDisplayDate(dateString) {
+            if (!dateString) return '-';
+            const [year, month, day] = dateString.split('-');
+            const dateObj = new Date(year, month - 1, day);
+            return dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        function loadDataFromLocalStorage() {
+            const savedData = localStorage.getItem('billsData');
+                if (savedData) {
+                    allBillsData = JSON.parse(savedData);
+                }
+        }
+
+        function loadBills() {
+            const billsListDiv = document.getElementById('billsList');
+            billsListDiv.innerHTML = ''; 
+
+            const savedBills = localStorage.getItem('billsData');
+            if (savedBills) {
+                billsData = JSON.parse(savedBills);
+            }
+
+            if (billsData.length === 0) {
+                billsListDiv.innerHTML = '<p class="text-center text-muted">Tidak ada data tagihan.</p>';
+                return;
+            }
+
+            billsData.forEach(bill => {
+                const billCard = document.createElement('div');
+                billCard.className = `card bill-card p-3 mb-3 ${bill.status}`;
+                
+                let statusText, statusClass;
+                if (bill.status === 'paid') {
+                    statusText = 'LUNAS';
+                    statusClass = 'status-paid';
+                } else {
+                    statusText = 'BELUM LUNAS';
+                    statusClass = 'status-unpaid';
+                }
+
+                billCard.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1">Tagihan ${bill.month}</h5>
+                            <p class="mb-1 text-muted">Jumlah: ${formatCurrency(bill.amount)}</p>
+                            <p class="mb-0 text-muted small">Jatuh Tempo: ${formatDisplayDate(bill.dueDate)}</p>
+                        </div>
+                        <div class="text-end">
+                            <span class="badge ${bill.status === 'paid' ? 'bg-success' : 'bg-danger'}">${statusText}</span>
+                            ${bill.status === 'paid' ? `<p class="small text-muted mt-1 mb-0">Dibayar: ${formatDisplayDate(bill.paidDate)}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+                billsListDiv.appendChild(billCard);
+            });
+        }
+
+        function updateSummaryCards() {
+            const totalPayments = allBillsData.length;
+            const paidCount = allBillsData.filter(bill => bill.status === 'paid').length;
+            const unpaidCount = allBillsData.filter(bill => bill.status === 'unpaid').length;
+            const totalAmount = allBillsData
+                .filter(bill => bill.status === 'paid')
+                .reduce((sum, bill) => sum + bill.amount, 0);
+
+            document.getElementById('totalPayments').textContent = totalPayments;
+            document.getElementById('paidCount').textContent = paidCount;
+            document.getElementById('unpaidCount').textContent = unpaidCount;
+            document.getElementById('totalAmount').textContent = formatCurrency(totalAmount);
+        }
+
+        function loadYearFilter() {
+            const yearSet = new Set();
+            allBillsData.forEach(bill => {
+                const year = bill.dueDate.split('-')[0];
+                yearSet.add(year);
+            });
+
+            const yearFilter = document.getElementById('yearFilter');
+            yearSet.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearFilter.appendChild(option);
+            });
+        }
+
+        function applyFilters() {
+            const statusFilter = document.getElementById('statusFilter').value;
+            const yearFilter = document.getElementById('yearFilter').value;
+            const monthFilter = document.getElementById('monthFilter').value;
+
+            filteredData = allBillsData.filter(bill => {
+                let passStatus = statusFilter === 'all' || bill.status === statusFilter;
+                let passYear = yearFilter === 'all' || bill.dueDate.startsWith(yearFilter);
+                let passMonth = monthFilter === 'all' || bill.dueDate.includes(`-${monthFilter}-`);
+                
+                return passStatus && passYear && passMonth;
+            });
+
+            filteredData.sort((a, b) => {
+                const dateA = new Date(a.paidDate || a.dueDate);
+                const dateB = new Date(b.paidDate || b.dueDate);
+                return dateB - dateA;
+            });
+
+            currentPage = 1;
+            loadPaymentHistory();
+        }
+
+        function resetFilters() {
+            document.getElementById('statusFilter').value = 'all';
+            document.getElementById('yearFilter').value = 'all';
+            document.getElementById('monthFilter').value = 'all';
+            applyFilters();
+        }
+
+        function loadPaymentHistory() {
+            const historyListDiv = document.getElementById('paymentHistoryList');
+            historyListDiv.innerHTML = '';
+
+            if (filteredData.length === 0) {
+                historyListDiv.innerHTML = '<p class="text-center text-muted">Tidak ada data riwayat yang sesuai dengan filter.</p>';
+                document.getElementById('paginationNav').style.display = 'none';
+                return;
+            }
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageData = filteredData.slice(startIndex, endIndex);
+
+            pageData.forEach(item => {
+                const historyItemDiv = document.createElement('div');
+                historyItemDiv.className = `history-item ${item.status === 'unpaid' ? 'unpaid' : ''}`;
+                
+                let statusBadge;
+                let paymentDetails = '';
+
+                if (item.status === 'paid') {
+                    statusBadge = `<span class="badge bg-success">LUNAS</span>`;
+                    paymentDetails = `<p class="small text-muted mt-1 mb-0">Dibayar pada: ${formatDisplayDate(item.paidDate)}</p>`;
+                } else {
+                    statusBadge = `<span class="badge bg-danger">BELUM LUNAS</span>`;
+                    paymentDetails = `<p class="small text-muted mt-1 mb-0">Jatuh tempo: ${formatDisplayDate(item.dueDate)}</p>`;
+                }
+
+                historyItemDiv.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1">Tagihan ${item.month}</h5>
+                            <p class="mb-1 text-muted">Jumlah: ${formatCurrency(item.amount)}</p>
+                            ${paymentDetails}
+                        </div>
+                        <div class="text-end">
+                            ${statusBadge}
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-primary" onclick="viewDetails(${item.id})">
+                                    <i class="fas fa-eye me-1"></i>Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                historyListDiv.appendChild(historyItemDiv);
+            });
+
+            updatePagination();
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            const paginationNav = document.getElementById('paginationNav');
+            const paginationList = document.getElementById('paginationList');
+
+            if (totalPages <= 1) {
+                paginationNav.style.display = 'none';
+                return;
+            }
+
+            paginationNav.style.display = 'block';
+            paginationList.innerHTML = '';
+
+            const prevLi = document.createElement('li');
+            prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>`;
+            paginationList.appendChild(prevLi);
+
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    const pageLi = document.createElement('li');
+                    pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                    pageLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+                    paginationList.appendChild(pageLi);
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    const ellipsisLi = document.createElement('li');
+                    ellipsisLi.className = 'page-item disabled';
+                    ellipsisLi.innerHTML = '<a class="page-link" href="#">...</a>';
+                    paginationList.appendChild(ellipsisLi);
+                }
+            }
+
+            const nextLi = document.createElement('li');
+            nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>`;
+            paginationList.appendChild(nextLi);
+        }
+
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                loadPaymentHistory();
+            }
+        }
+
+        function viewDetails(billId) {
+            const bill = allBillsData.find(b => b.id === billId);
+            if (bill) {
+                const modalContent = `
+                    <div class="modal fade" id="detailModal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Detail Tagihan ${bill.month}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td><strong>Periode</strong></td>
+                                            <td>${bill.month}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Jumlah</strong></td>
+                                            <td>${formatCurrency(bill.amount)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Jatuh Tempo</strong></td>
+                                            <td>${formatDisplayDate(bill.dueDate)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Status</strong></td>
+                                            <td><span class="badge ${bill.status === 'paid' ? 'bg-success' : 'bg-danger'}">${bill.status === 'paid' ? 'LUNAS' : 'BELUM LUNAS'}</span></td>
+                                        </tr>
+                                        ${bill.status === 'paid' ? `
+                                        <tr>
+                                            <td><strong>Tanggal Bayar</strong></td>
+                                            <td>${formatDisplayDate(bill.paidDate)}</td>
+                                        </tr>
+                                        ` : ''}
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                const existingModal = document.getElementById('detailModal');
+                if (existingModal) {
+                    existingModal.remove();
+                }
+                
+                document.body.insertAdjacentHTML('beforeend', modalContent);
+                const modal = new bootstrap.Modal(document.getElementById('detailModal'));
+                modal.show();
+            }
+        }
+
+        function exportHistory() {
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Periode,Jumlah,Jatuh Tempo,Status,Tanggal Bayar\n";
+            
+            filteredData.forEach(bill => {
+                const row = [
+                    bill.month,
+                    bill.amount,
+                    bill.dueDate,
+                    bill.status === 'paid' ? 'LUNAS' : 'BELUM LUNAS',
+                    bill.paidDate || '-'
+                ].join(',');
+                csvContent += row + "\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "riwayat_pembayaran.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function logout() {
+            alert('Anda telah logout.');
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('statusFilter').addEventListener('change', applyFilters);
+        document.getElementById('yearFilter').addEventListener('change', applyFilters);
+        document.getElementById('monthFilter').addEventListener('change', applyFilters);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDataFromLocalStorage();
+            updateSummaryCards();
+            loadYearFilter();
+            applyFilters();  
+            loadBills();
+        });
+    </script>
+</body>
+</html>
