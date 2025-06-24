@@ -1,0 +1,254 @@
+.pendaftaran-penyewa {
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    border-style: outset;
+    border-radius: 8px;
+    border-width: 2px;
+    width: 1500px;
+    max-width: 80%;
+    justify-self: center;
+    height: 750px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 30px;
+    background-color: azure;
+    box-shadow: 4px 4px 25px #1B1610;
+}
+
+.penambahan-kamar {
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    border-style: outset;
+    border-radius: 8px;
+    border-width: 2px;
+    width: 1500px;
+    max-width: 80%;
+    justify-self: center;
+    height: 480px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 30px;
+    background-color: azure;
+    box-shadow: 4px 4px 25px #1B1610;
+}
+
+.titlem {
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.titlem2 {
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.nama-penyewa {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.tanggal-penyewa {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    max-width: fit-content;
+    padding: 7px;
+}
+
+.tipe-kamar {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    max-width: fit-content;
+    padding: 7px;
+    margin-bottom: 14px;
+}
+
+.kendaraan {
+    border-radius: 3px;
+    margin-left: 36px;
+    padding: 7px;
+}
+
+.asal-kota {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.no-induk {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.no-telepon {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.instansi {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.email {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.pekerjaan {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.submit-penyewa {
+    border-radius: 6px;
+    padding: 4px;
+    margin-left: 54px;
+    width: 144px;
+    height: 48px;
+    background-color: #008000;
+    color: white;
+    font-weight: bolder;
+}
+
+.reset-penyewa {
+    border-radius: 6px;
+    padding: 4px;
+    margin-left: 54px;
+    width: 144px;
+    height: 48px;
+    background-color: #ED4337;
+    color: white;
+    font-weight: bolder;
+}
+
+.submit-penyewa:hover {
+    opacity: 75%;
+}
+
+.submit-penyewa:active {
+    opacity: 40%;
+}
+
+.nomor-kamar {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.ukuran-kamar1 {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    margin-right: 4px;
+    width: 180px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.ukuran-kamar2 {
+    border-radius: 3px;
+    margin-left: 4px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    width: 180px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.harga {
+    border-radius: 3px;
+    margin-left: 36px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    width: 720px;
+    padding: 7px;
+    background-color: #f6f6f6;
+}
+
+.fasilitas {
+    border-radius: 3px;
+    margin-left: 36px;
+    padding: 7px;
+    margin-bottom: 14px;
+}
+
+.data-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.data-penyewa {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.b-data-penyewa {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 108px;
+    padding-right: 108px;
+    border-radius:8px;
+    background-color: #E4F6F8;
+    box-shadow: 2px 2px 2px #1B1610;
+    font-size: 21px;
+}
+
+.data-kamar {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.b-data-kamar {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 108px;
+    padding-right: 108px;
+    border-radius:8px;
+    background-color: #E4F6F8;
+    box-shadow: 2px 2px 2px #1B1610;
+    font-size: 21px;
+}

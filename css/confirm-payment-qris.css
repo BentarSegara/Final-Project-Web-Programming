@@ -1,0 +1,180 @@
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.payment-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border: none;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.info-value {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.amount-highlight {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.qr-section {
+    background: #f8f9ff;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.qr-placeholder {
+    width: 160px;
+    height: 160px;
+    background: #000;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.qr-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: 
+        radial-gradient(circle at 20px 20px, transparent 15px, black 15px, black 25px, transparent 25px),
+        radial-gradient(circle at 20px 130px, transparent 15px, black 15px, black 25px, transparent 25px),
+        radial-gradient(circle at 130px 20px, transparent 15px, black 15px, black 25px, transparent 25px),
+        linear-gradient(45deg, transparent 48%, black 48%, black 52%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, black 48%, black 52%, transparent 52%);
+    background-size: 50px 50px, 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+}
+
+.alert-custom {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    color: #856404;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.btn-whatsapp:hover {
+    background: #20c05a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    color: white;
+}
+
+.btn-back {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-back:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.status-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.icon-payment {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.icon-payment i {
+    font-size: 24px;
+    color: white;
+}

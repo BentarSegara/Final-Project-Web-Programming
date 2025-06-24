@@ -1,0 +1,36 @@
+.status-paid {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-unpaid {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.bill-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.bill-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bill-card.paid {
+    border-left-color: #28a745;
+}
+
+.bill-card.unpaid {
+    border-left-color: #dc3545;
+}
+
+.badge {
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}

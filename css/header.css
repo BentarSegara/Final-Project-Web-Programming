@@ -1,0 +1,88 @@
+.navbar-nav .nav-link {
+            border-radius: 15px;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.7);
+            list-style: none;
+            position: sticky;
+            top: 0;
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding-left: 14px;
+            padding-right: 14px;
+            position: sticky;
+            top: 0;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+            color:white;
+        }
+
+.navbar-manage .nav-link {
+            border-radius: 5px;
+            margin: 5px;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.7);
+            display: inline-block;
+            list-style: none;
+            position: sticky;
+            top: 0;
+        }
+        
+        .navbar-manage .nav-link.active {
+            background: linear-gradient(270deg, #4e60b0 0%, #5f3c82 100%);
+            color: white !important;
+        }
+        
+        .navbar-manage .nav-link:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+            color:white;
+        }
+
+ul.navbarlantai {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 24px;
+  margin-right: 14px;
+  margin-left: 14px;
+  padding: 4px;
+  background-color: azure;
+  box-shadow: 4px 4px 4px #1B1610;
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+  list-style: none;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  padding-right: 335px;
+  padding-left: 335px;
+}
+
+li a:hover {
+  background-color: #111;
+  color: white;
+  border-radius: 18px;
+  padding-right: 335px;
+  padding-left: 335px;
+}

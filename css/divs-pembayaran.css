@@ -1,0 +1,69 @@
+.pembayaran-title {
+    border-radius: 7px;
+    background-color: azure;
+    margin: 21px;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 4px 4px 4px #1B1610;
+    border-style: outset;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 450px;
+    height: 60px;
+    font-weight: 750;
+    font-size: 24px;
+}
+
+.pembayaran {
+    border-radius: 28px;
+    background-color: azure;
+    margin: 21px;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 4px 4px 4px #1B1610;
+    border-style: outset;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 1350px;
+    height: 900px;
+    font-weight: 750;
+    font-size: 24px;
+    overflow-y: scroll;
+    max-height: 540px;
+}
+
+.pembayaran-box {
+    border-radius: 14px;
+    background-color: azure;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin: 10px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-style: groove;
+    box-shadow: 0px 1px 2px #1B1610;
+}
+
+.pembayaran-box-title {
+    padding-left: 7px;
+    padding-top: 7px;
+}
+
+.pembayaran-box-detail {
+    font-size: 16px;
+    font-weight: 350;
+}
+
+.pembayaran-box-time {
+    font-size: 11px;
+    font-weight: 150;
+}
+
+.pembayaran-box-price-due {
+    color:red;
+}
+.pembayaran-box-price-paid {
+    color:green;
+}
