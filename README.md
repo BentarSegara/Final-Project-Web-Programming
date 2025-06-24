@@ -7,7 +7,7 @@ Repositori ini digunakan untuk mengerjakan dan mengelola **Proyek Akhir Semester
 ## 📚 Daftar Isi
 - [Deskripsi Proyek](#-deskripsi-proyek)
 - [Fitur](#-fitur)
-- [Struktur Folder](#struktur-folder)
+- [Struktur Folder](#%EF%B8%8F-struktur-folder)
 - [Anggota Tim](#-anggota-tim)
 
 ---
