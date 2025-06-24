@@ -8,9 +8,7 @@ Repositori ini digunakan untuk mengerjakan dan mengelola **Proyek Akhir Semester
 - [Deskripsi Proyek](#deskripsi-proyek)
 - [Fitur](#fitur)
 - [Struktur Folder](#struktur-folder)
-- [Cara Menjalankan](#cara-menjalankan)
 - [Anggota Tim](#anggota-tim)
-- [Progress & To-Do](#progress--to-do)
 
 ---
 
@@ -23,19 +21,21 @@ Repositori ini digunakan untuk mengerjakan dan mengelola **Proyek Akhir Semester
 - Pembayaran Sewa: Penghuni kost dapat melakukan pembayaran sewa kamar secara langsung melalui aplikasi.
 - Monitoring Pembayaran: Pengelola kost dapat dengan mudah memantau status pembayaran penghuni, termasuk siapa yang sudah membayar, yang belum membayar, dan yang       
   terlambat membayar.
-- Pelaporan Kerusakan: Penghuni kost dapat melaporkan kerusakan fasilitas secara langsung melalui aplikasi. Laporan ini akan diterima oleh pengelola untuk segera    
-  ditindaklanjuti dan dilakukan perawatan atau perbaikan.
-
+  
 ---
 
 ## 🗂️ Struktur Folder
 
 ```
-Sistem-manajemen-kost/
+Final-Project-Web-Programming/
 │
-├── node_modules/      # Folder Bootstrap
-├── src /              # Folder Source Code
-├── assets/            # Gambar/logo/icon (jika ada)
+├── config /           # Database connection
+├── controller /       # Controller folder
+├── model /            # model folder
+├── view /
+    ├── admin /        # admin's view files
+    ├── user /         # user's view files
+├── database /         # database .sql file
 ├── README.md          # Dokumentasi ini
 └── ...
 ```
