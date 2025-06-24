@@ -36,20 +36,12 @@ Final-Project-Web-Programming/
 ├── view /
     ├── admin /                   # admin's view files
     ├── user /                    # user's view files
+├── README.md                     # Documentation
 ├── forgot_password.php           # forgot password page file
-├── login.php                     # login page file
-├── signup.php                    # signup page file
-└── README.md                     # Documentation
+├── login.php                     # login page file      
+└── signup.php                    # signup page file
  
 ```
-
----
-
-## ▶️ Cara Menjalankan
-````
-empty
-````
-
 ---
 
 ## 👥 Anggota Tim
@@ -61,8 +53,3 @@ empty
 - Bentar Segara Buana   | 23081010227 | @BentarSegara
 
 ----
-
-## ➡️ Progress & To-Do
-```
-empty
-```
