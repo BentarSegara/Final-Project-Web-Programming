@@ -29,15 +29,18 @@ Repositori ini digunakan untuk mengerjakan dan mengelola **Proyek Akhir Semester
 ```
 Final-Project-Web-Programming/
 │
-├── config /           # Database connection
-├── controller /       # Controller folder
-├── model /            # model folder
+├── config /                      # Database connection
+├── controller /                  # Controller folder
+├── database /                    # database .sql file
+├── model /                       # model folder
 ├── view /
-    ├── admin /        # admin's view files
-    ├── user /         # user's view files
-├── database /         # database .sql file
-├── README.md          # Dokumentasi ini
-└── ...
+    ├── admin /                   # admin's view files
+    ├── user /                    # user's view files
+├── forgot_password.php           # forgot password page file
+├── login.php                     # login page file
+├── signup.php                    # signup page file
+└── README.md                     # Documentation
+ 
 ```
 
 ---
